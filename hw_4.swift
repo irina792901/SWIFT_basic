@@ -54,7 +54,7 @@ class Pizzeria {
   }
   
   func addPizza(pizza: Pizza) -> Void 
-    pizzas.add(pizza: Pizza)
+    pizzas.append(pizza: Pizza)
 }
 
 let pizzeria1: Pizzeria = []
