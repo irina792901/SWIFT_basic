@@ -7,13 +7,13 @@
 5. Создать экземпляр класса пиццерии и добавить в него несколько пицц.
 */
 
+
 struct Pizza {
   let pizzaType: PizzaType
   var size: Size 
   var cost: Double
   var isThinDough: Bool = true // по умолчанию тесто тонкое
   var pizzaAdditives: PizzaAdditives
-}
 enum PizzaType: String { 
   case carbonara = "Карбонара"
   case guatroFormaggi = "Четыре сыра"
@@ -26,14 +26,14 @@ enum Size{
   case m
   case l
 
-  init (Size: String) (
+  init (size: String) {
     switch size {
       case "small": self = .s
       case "medium": self = .m
       case "large": self = .l
       default: self = .m
     }
-  )
+  }
 }
 enum PizzaAdditives: String {
   case pepperoni = "острая салями"
@@ -49,17 +49,19 @@ class Pizzeria {
     self.pizzas = pizzas
   }
 
-  func getPizza( () -> [Pizza] {
-    return pizzeria.pizzas
+  func getPizza () -> [Pizza] {
+    return pizzas
   }
   
-  func addPizza(pizza: Pizza) -> Void 
-    pizzas.append(pizza: Pizza)
+  func addPizza(pizza: Pizza) {
+    pizzas.append(pizza)
+    }
 }
 
-let pizzeria1: Pizzeria = []
-  pizzeria1.addPizza(pepperoni, 450)
-                
-print(pizzeria1.getPizza())
 
+let pizzeria1: Pizzeria = Pizzeria(pizzas: [])
+
+pizzeria1.addPizza(pizza: Pizza(pizzaType: .caprichoza, size: .s, cost: 100, pizzaAdditives: .cheese))
+
+print(pizzeria1.getPizza())
   
